@@ -2,7 +2,7 @@
 
 Summary: Web development tool extension for firefox
 Name: firefox-ext-firebug
-Version: 1.5.3
+Version: 1.5.4
 Release: %mkrel 1
 License: MPL
 Group:	Networking/WWW
