@@ -1,13 +1,15 @@
 %define _mozillaextpath %{firefox_mozillapath}/extensions
+%define pre X.0b3
 
 Summary: Web development tool extension for firefox
 Name: firefox-ext-firebug
-Version: 1.5.4
-Release: %mkrel 4
+Version: 1.6
+Release: %mkrel 0.%pre
 License: MPL
 Group:	Networking/WWW
 URL:	https://addons.mozilla.org/en-US/firefox/addon/1843
-Source: http://www.gtlib.gatech.edu/pub/mozilla.org/addons/1843/firebug-%{version}-fx.xpi
+#Source: http://www.gtlib.gatech.edu/pub/mozilla.org/addons/1843/firebug-%{version}-fx.xpi
+Source: http://getfirebug.com/releases/firebug/1.6X/firebug-%{version}%{pre}.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires:	mozilla-firefox => %{firefox_epoch}:%{firefox_version}
 BuildRequires:	firefox-devel
