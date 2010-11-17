@@ -1,5 +1,5 @@
 %define _mozillaextpath %{firefox_mozillapath}/extensions
-%define pre X.0b3
+%define pre X.0b4
 
 Summary: Web development tool extension for firefox
 Name: firefox-ext-firebug
