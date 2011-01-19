@@ -1,5 +1,4 @@
-%define _mozillaextpath %{firefox_mozillapath}/extensions
-%define pre X.0a7
+%define pre X.0a8
 
 Summary: Web development tool extension for firefox
 Name: firefox-ext-firebug
@@ -13,6 +12,7 @@ Source: http://getfirebug.com/releases/firebug/1.7X/firebug-%{version}%{pre}.xpi
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires:	mozilla-firefox => %{firefox_epoch}:%{firefox_version}
 BuildRequires:	firefox-devel
+Buildarch: noarch
 
 %description
 The most popular and powerful web development tool
@@ -31,7 +31,7 @@ The most popular and powerful web development tool
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%{_mozillaextpath}
+mkdir -p %{buildroot}%{firefox_extdir}
 
 hash="$(sed -n '/.*em:id="\(.*\)"/{s//\1/p;q}' install.rdf)"
 if [ -z "$hash" ]; then
@@ -41,15 +41,15 @@ if [ -z "$hash" ]; then
     echo "Failed to find plugin hash."
     exit 1
 fi
-extdir="%{_mozillaextpath}/$hash"
+extdir="%{firefox_extdir}/"
 mkdir -p "%{buildroot}$extdir"
-cp -af * "%{buildroot}$extdir/"
+cp -af %SOURCE0 "%{buildroot}$extdir/$hash.xpi"
+
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%dir %firefox_mozillapath
-%{_mozillaextpath}
+%{firefox_extdir}
 
