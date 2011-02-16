@@ -1,4 +1,4 @@
-%define pre X.0a10
+%define pre X.0a11
 
 Summary: Web development tool extension for firefox
 Name: firefox-ext-firebug
