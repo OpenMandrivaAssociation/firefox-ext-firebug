@@ -1,9 +1,9 @@
-%define pre X.0a11
+%define pre X.0b3
 
 Summary: Web development tool extension for firefox
 Name: firefox-ext-firebug
 Version: 1.7
-Release: %mkrel 0.%pre.2
+Release: %mkrel 0.%pre.1
 License: MPL
 Group:	Networking/WWW
 URL:	https://addons.mozilla.org/en-US/firefox/addon/1843
